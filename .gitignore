@@ -1,0 +1,18 @@
+# dependências
+node_modules/
+
+# ambiente
+.env
+.dev.vars
+
+# build
+.svelte-kit/
+dist/
+.wrangler/
+
+# drizzle
+drizzle/
+
+# sistema
+.DS_Store
+Thumbs.db
