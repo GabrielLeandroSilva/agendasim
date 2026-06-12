@@ -1,6 +1,9 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { signUp, signIn, verifyToken } from './auth'
+import salaoRoutes from './routes/salao'
+import servicoRoutes from './routes/servico'
+import agendamentoRoutes from './routes/agendamento'
 
 type Bindings = {
   DATABASE_URL: string
@@ -45,5 +48,9 @@ app.get('/auth/me', async (c) => {
   if (!payload) return c.json({ error: 'Token inválido' }, 401)
   return c.json({ userId: payload.userId })
 })
+
+app.route('/salao', salaoRoutes)
+app.route('/servico', servicoRoutes)
+app.route('/agendamento', agendamentoRoutes)
 
 export default app
