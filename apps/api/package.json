@@ -9,7 +9,8 @@
     "dev": "wrangler dev",
     "build": "wrangler deploy --dry-run",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "auth:migrate": "node -e \"require('./src/auth.ts')\" "
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,8 @@
     "@agendasim/types": "workspace:*",
     "@neondatabase/serverless": "^1.1.0",
     "drizzle-orm": "^0.45.2",
-    "hono": "^4.12.25"
+    "hono": "^4.12.25",
+    "jose": "^6.2.3"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260610.1",
