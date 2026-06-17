@@ -62,6 +62,8 @@ export const saloes = pgTable('saloes', {
   imagemUrl: text('imagem_url'),
   mensagemRecusa: text('mensagem_recusa'),
   userId: text('user_id').notNull().references(() => user.id),
+  corPrimaria: text('cor_primaria').notNull().default('#D4537E'),
+  corTexto: text('cor_texto').notNull().default('#2C2C2A'),
   criadoEm: timestamp('criado_em').defaultNow().notNull()
 })
 

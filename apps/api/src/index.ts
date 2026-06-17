@@ -18,6 +18,11 @@ app.use('*', cors({
   credentials: true
 }))
 
+app.use('*', async (c, next) => {
+  await next()
+  c.res.headers.set('Content-Type', 'application/json; charset=utf-8')
+})
+
 app.get('/', (c) => c.json({ ok: true, service: 'AgendaSim API' }))
 
 app.post('/auth/sign-up', async (c) => {
